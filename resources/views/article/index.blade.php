@@ -1,21 +1,19 @@
 <x-layout>
+
     <div class="container-fluid p-5 bg-info text-center text-white">
         <div class="row justify-content-center">
-            <h1 class="display-1">
-                The Aulab Post
+            <h1 class="display-1 text-capitalize">
+                <--! Categoria {{$category->name}}
+                User {{$user->name}} -->
+                Tutti gli articoli
             </h1>
         </div>
     </div>
 
-    @if(session('message'))
-    <div class="alert alert-success text-center">{{session('message')}}
-    </div>
-    @endif
-
     <div class="container my-5">
         <div class="row justify-content-around">
             @foreach($articles as $article)
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-3 my-2">
                 <div class="card">
                     <img src="{{Storage::url($article->image)}}" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -46,4 +44,9 @@
             @endforeach
         </div>
     </div>
+
+
+
+    
+    
 </x-layout>
