@@ -32,7 +32,7 @@ Route::post('/article/store', [ArticleController::class, 'store'])->name('articl
 
 Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
 
-//Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
+Route::get('/article/{article}/show/', [ArticleController::class, 'show'])->name('article.show');
 
 Route::get('/article/category/{category}', [ArticleController::class, 'byCategory'])->name('article.byCategory');
 
@@ -60,6 +60,7 @@ Route::middleware('revisor')->group(function(){
     Route::get('/revisor/{article}/accept', [RevisorController::class, 'acceptArticle'])->name('revisor.acceptArticle');
     Route::get('/revisor/{article}/reject', [RevisorController::class, 'rejectArticle'])->name('revisor.rejectArticle');
     Route::get('/revisor/{article}/undo', [RevisorController::class, 'undoArticle'])->name('revisor.undoArticle');
+
 });
 
 Route::middleware('writer')->group(function(){
@@ -75,4 +76,3 @@ Route::middleware('writer')->group(function(){
 Route::get('/article/search', [ArticleController::class, 'articleSearch'])->name('article.search');
 
 Route::get('/article/{$article}/show', [ArticleController::class, 'show'])->name('article.show');
-?>
