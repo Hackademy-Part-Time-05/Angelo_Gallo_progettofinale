@@ -24,7 +24,7 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h2>Aricoli pubblicati</h2>
+                <h2>Articoli pubblicati</h2>
                 <x-articles-table :articles="$acceptedArticles" />
             </div>
         </div>
